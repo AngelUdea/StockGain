@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso - StockGain</title>
+		<link rel="icon" href="../img/logo_cuadrado_azul_relleno.png"
+			type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/acceso_styles.css">
+</head>
+<body>
+    <div class="auth-container">
+        <form id="login-form">
+            <h2 class="form-title">Iniciar Sesión en <span>StockGain</span></h2>
+            <div id="login-error" class="error-message"></div>
+            <div class="input-group">
+                <label for="login-email" class="input-label">Correo Electrónico</label>
+                <input type="email" id="login-email" name="email" class="input-field" required>
+            </div>
+            <div class="input-group">
+                <label for="login-password" class="input-label">Contraseña</label>
+                <input type="password" id="login-password" name="password" class="input-field" required>
+            </div>
+            <button type="submit" class="submit-button">Ingresar</button>
+            <p class="toggle-form">
+                ¿No tienes una cuenta? <a id="show-register-link" class="toggle-link">Regístrate aquí</a>
+            </p>
+        </form>
+        <form id="register-form" style="display: none;">
+            <h2 class="form-title">Crea tu Cuenta en <span>StockGain</span></h2>
+            <div id="register-error" class="error-message"></div>
+            <div class="input-group">
+                <label for="register-nombre" class="input-label">Nombre Completo</label>
+                <input type="text" id="register-nombre" name="nombre" class="input-field" required>
+            </div>
+            <div class="input-group">
+                <label for="register-email" class="input-label">Correo Electrónico</label>
+                <input type="email" id="register-email" name="email" class="input-field" required>
+            </div>
+            <div class="input-group">
+                <label for="register-password" class="input-label">Contraseña</label>
+                <input type="password" id="register-password" name="password" class="input-field" required minlength="6">
+            </div>
+            <button type="submit" class="submit-button">Crear Cuenta</button>
+            <p class="toggle-form">
+                ¿Ya tienes una cuenta? <a id="show-login-link" class="toggle-link">Inicia sesión aquí</a>
+            </p>
+        </form>
+    </div>
+    <script src="../javascript/auth_functions.js"></script>
+</body>
+</html>
