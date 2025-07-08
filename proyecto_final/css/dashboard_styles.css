@@ -1,0 +1,138 @@
+/**
+ * DASHBOARD_STYLES.CSS
+ * 
+ * Hoja de estilos personalizada para el dashboard de StockGain
+ * 
+ * Descripción:
+ * Este archivo contiene estilos personalizados que complementan TailwindCSS
+ * para el dashboard de la aplicación StockGain. Se enfoca en mantener la
+ * consistencia visual con la paleta de colores de la marca y proporciona
+ * estilos específicos para componentes del dashboard.
+ * 
+ * Características principales:
+ * - Clases de utilidad personalizadas para colores de marca
+ * - Estilos de scrollbar personalizados
+ * - Configuración de tooltips para gráficos ApexCharts
+ * - Estilos para badges ESG (Environmental, Social, Governance)
+ * - Configuración de tablas y elementos interactivos
+ * 
+ * Paleta de colores:
+ * - #222831: Color de fondo principal (bg-main)
+ * - #393E46: Color de fondo secundario (bg-light)
+ * - #00ADB5: Color de destacado (text-highlight, bg-highlight)
+ * - #008A91: Color de destacado oscuro (hover states)
+ * - #EEEEEE: Color de texto principal
+ * 
+ * Elementos personalizados:
+ * - Scrollbar estilizada
+ * - Badges ESG con colores específicos
+ * - Tooltips de gráficos
+ * - Estados hover para elementos interactivos
+ * 
+ * @author StockGain Team
+ * @version 1.0
+ */
+
+/* ===== CONFIGURACIÓN BASE ===== */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #222831;
+    color: #EEEEEE;
+}
+
+/* ===== CLASES DE UTILIDAD PERSONALIZADAS ===== */
+/* Color de fondo principal de la aplicación */
+.bg-main { 
+    background-color: #222831; 
+}
+
+/* Color de fondo secundario para tarjetas y elementos */
+.bg-light { 
+    background-color: #393E46; 
+}
+
+/* Color de texto destacado (aqua/teal) */
+.text-highlight { 
+    color: #00ADB5; 
+}
+
+/* Color de borde destacado */
+.border-highlight { 
+    border-color: #00ADB5; 
+}
+
+/* Color de fondo destacado */
+.bg-highlight { 
+    background-color: #00ADB5; 
+}
+
+/* Color de fondo destacado en hover (más oscuro) */
+.hover\:bg-highlight-dark:hover { 
+    background-color: #008a91; 
+}
+
+/* ===== ESTILOS DE SCROLLBAR PERSONALIZADOS ===== */
+::-webkit-scrollbar { 
+    width: 12px; 
+}
+
+::-webkit-scrollbar-track { 
+    background: #222831; 
+}
+
+::-webkit-scrollbar-thumb { 
+    background-color: #393E46; 
+    border-radius: 6px; 
+    border: 3px solid #222831; 
+}
+
+::-webkit-scrollbar-thumb:hover { 
+    background-color: #00ADB5; 
+}
+
+/* ===== ESTILOS PARA GRÁFICOS APEXCHARTS ===== */
+.apexcharts-tooltip { 
+    background: #393E46 !important; 
+    color: #EEEEEE !important; 
+    border: 1px solid #00ADB5 !important; 
+}
+
+.apexcharts-tooltip-title { 
+    background: #222831 !important; 
+    border-bottom: 1px solid #00ADB5 !important; 
+}
+
+/* ===== ESTILOS PARA TABLAS Y ELEMENTOS INTERACTIVOS ===== */
+.table-header {
+    background-color: #00adb51a; 
+}
+
+.table-row:hover { 
+    background-color: #393E46; 
+}
+
+/* ===== ESTILOS PARA BADGES ESG ===== */
+.esg-score-badge { 
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-weight: 700; 
+    padding: 0.25rem 0.75rem; 
+    border-radius: 9999px; 
+    font-size: 0.875rem; 
+}
+
+.esg-A { 
+    background-color: #00adb533; 
+    color: #00ADB5; 
+}
+
+.esg-B { 
+    background-color: #eeeeee33; 
+    color: #EEEEEE; 
+}
+
+.esg-C { 
+    background-color: #ff525233; 
+    color: #FF5252; 
+}

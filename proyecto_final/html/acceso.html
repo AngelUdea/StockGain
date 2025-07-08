@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--
+/**
+ * ACCESO.HTML
+ * 
+ * Página de autenticación de la aplicación StockGain
+ * 
+ * Descripción:
+ * Esta página contiene los formularios de inicio de sesión y registro de usuarios
+ * para acceder a la plataforma StockGain. Incluye validación de campos,
+ * manejo de errores y alternancia entre formularios.
+ * 
+ * Características:
+ * - Formulario de inicio de sesión con validación
+ * - Formulario de registro con validación de contraseña
+ * - Alternancia dinámica entre ambos formularios
+ * - Mensajes de error integrados
+ * - Diseño responsive y accesible
+ * - Integración con backend para autenticación
+ * 
+ * Funcionalidades:
+ * - Validación de campos de email y contraseña
+ * - Envío de datos al backend para autenticación
+ * - Manejo de errores de servidor
+ * - Redirección automática después del login exitoso
+ * - Almacenamiento de token JWT en localStorage
+ * 
+ * Dependencias:
+ * - CSS: ../css/acceso_styles.css
+ * - JavaScript: ../javascript/auth_functions.js
+ * - Backend API: endpoints de /auth/login y /auth/registro
+ * - Google Fonts: Montserrat
+ * 
+ * @author StockGain Team
+ * @version 1.0
+ */
+-->
+<html lang="es">
+<head>
+    <!-- Metadatos básicos del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso - StockGain</title>
+    
+    <!-- Icono de la página (favicon) -->
+    <link rel="icon" href="../img/logo_cuadrado_azul_relleno.png"
+        type="image/png">
+    
+    <!-- Preconexiones para optimización de carga de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Importación de fuente Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Hoja de estilos para la página de acceso -->
+    <link rel="stylesheet" href="../css/acceso_styles.css">
+</head>
+<body>
+    <!-- Contenedor principal de autenticación -->
+    <div class="auth-container">
+        <!-- FORMULARIO DE INICIO DE SESIÓN -->
+        <form id="login-form">
+            <!-- Título del formulario -->
+            <h2 class="form-title">Iniciar Sesión en <span>StockGain</span></h2>
+            
+            <!-- Área de mensajes de error para login -->
+            <div id="login-error" class="error-message"></div>
+            
+            <!-- Campo de correo electrónico -->
+            <div class="input-group">
+                <label for="login-email" class="input-label">Correo Electrónico</label>
+                <input type="email" id="login-email" name="email" class="input-field" required>
+            </div>
+            
+            <!-- Campo de contraseña -->
+            <div class="input-group">
+                <label for="login-password" class="input-label">Contraseña</label>
+                <input type="password" id="login-password" name="password" class="input-field" required>
+            </div>
+            
+            <!-- Botón de envío para iniciar sesión -->
+            <button type="submit" class="submit-button">Ingresar</button>
+            
+            <!-- Enlace para cambiar al formulario de registro -->
+            <p class="toggle-form">
+                ¿No tienes una cuenta? <a id="show-register-link" class="toggle-link">Regístrate aquí</a>
+            </p>
+        </form>
+        
+        <!-- FORMULARIO DE REGISTRO (inicialmente oculto) -->
+        <form id="register-form" style="display: none;">
+            <!-- Título del formulario -->
+            <h2 class="form-title">Crea tu Cuenta en <span>StockGain</span></h2>
+            
+            <!-- Área de mensajes de error para registro -->
+            <div id="register-error" class="error-message"></div>
+            
+            <!-- Campo de nombre completo -->
+            <div class="input-group">
+                <label for="register-nombre" class="input-label">Nombre Completo</label>
+                <input type="text" id="register-nombre" name="nombre" class="input-field" required>
+            </div>
+            
+            <!-- Campo de correo electrónico -->
+            <div class="input-group">
+                <label for="register-email" class="input-label">Correo Electrónico</label>
+                <input type="email" id="register-email" name="email" class="input-field" required>
+            </div>
+            
+            <!-- Campo de contraseña con validación mínima -->
+            <div class="input-group">
+                <label for="register-password" class="input-label">Contraseña</label>
+                <input type="password" id="register-password" name="password" class="input-field" required minlength="6">
+            </div>
+            
+            <!-- Botón de envío para crear cuenta -->
+            <button type="submit" class="submit-button">Crear Cuenta</button>
+            
+            <!-- Enlace para cambiar al formulario de login -->
+            <p class="toggle-form">
+                ¿Ya tienes una cuenta? <a id="show-login-link" class="toggle-link">Inicia sesión aquí</a>
+            </p>
+        </form>
+    </div>
+    <!-- Script de funciones de autenticación -->
+    <script src="../javascript/auth_functions.js"></script>
+</body>
+</html>
